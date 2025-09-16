@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Distinguish having and where</title>
+    <url>/2025/06/16/having-where/</url>
+    <content><![CDATA[
+
+
+
+WHERE
+HAVING
+
+
+
+执行时机
+分组前过滤
+分组后过滤
+
+
+使用对象
+原始表中的列
+分组结果或聚合函数计算结果
+
+
+性能
+通常更高效
+通常效率较低
+
+
+SELECT department, AVG(salary) FROM employees GROUP BY department HAVING AVG(salary) &gt; 5000;  -- 不能用WHERE过滤聚合结果
+
+SELECT product_id, COUNT(*) as order_countFROM ordersGROUP BY product_idHAVING order_count &gt; 10;  -- 过滤分组后的计数结果
+
+SELECT customer_id, SUM(amount) as total_spentFROM transactionsGROUP BY customer_idHAVING total_spent &gt; 1000;  -- WHERE不能使用别名
+
+
+使用建议
+优先使用WHERE：能在WHERE中完成的条件就不要用HAVING，减少分组处理的数据量
+必须时才用HAVING：只有当过滤条件依赖于分组结果或聚合函数时才使用HAVING
+组合使用：经常WHERE和HAVING一起使用，先用WHERE初步筛选，再用HAVING对分组结果过滤
+
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2025/09/14/hello-world/</url>
+    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server$ hexo server
+
+More info: Server
+Generate static files$ hexo generate
+
+More info: Generating
+Deploy to remote sites$ hexo deploy
+
+More info: Deployment
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Join(two tables)</title>
+    <url>/2025/06/04/join/</url>
+    <content><![CDATA[Basic sentenceSELECT columnsFROM table1() JOIN table2ON table1.column_name=table2.column_name; 
+
+INNER JOININNER JOIN equals to JOIN,
+Explicit form 
+INNER JOIN
+
+Implicit form
+JOIN
+
+Tables :Person :
+
+
+
+personID
+lastName
+firstName
+
+
+
+1
+Wang
+Allen
+
+
+2
+Alice
+Bob
+
+
+Address:
+
+
+
+addressID
+personID
+city
+state
+
+
+
+1
+2
+New York City
+New York
+
+
+2
+3
+Leetcode
+California
+
+
+SELECT Person.firstName, Address.cityFROM PersonINNER JOIN AddressON Person.personID = Address.personID;
+
+result:
+
+
+
+firstName
+city
+
+
+
+Bob
+New York City
+
+
+
+LEFT JOINTables :SELECT Person.firstName, Address.cityFROM Person LEFT JOIN Address # Write in one line is more intuitiveON Person.personID = Address.personID;
+
+result:
+
+
+
+firstName
+city
+
+
+
+Bob
+New York City
+
+
+Allen
+NULL
+
+
+
+RIGHT JOINTables :SELECT Person.firstName, Address.cityFROM Person RIGHT JOIN Address # Write in one line is more intuitiveON Person.personID = Address.personID;
+
+result:
+
+
+
+firstName
+city
+
+
+
+Bob
+New York City
+
+
+NULL
+Leetcode
+
+
+
+FULL JOINTables :SELECT Person.firstName, Address.cityFROM Person FULL JOIN AddressON Person.personID = Address.personID;
+
+result:
+
+
+
+firstName
+city
+
+
+
+Bob
+New York City
+
+
+Allen
+NULL
+
+
+NULL
+Leetcode
+
+
+
+Summary
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Regular Expression</title>
+    <url>/2025/06/15/regexp/</url>
+    <content><![CDATA[一般形式WHERE example_column REGEXP &#x27;这里写正则表达式内容&#x27;
+
+注意：
+
+要加引号
+
+默认情况不区分大小写
+  若要区分，则使用
+
+
+REGEXP BINARY
+
+
+基本用法^ 表示字符串开始
+e.g.  ^e表示以e开始
+注意:若^在[]里面,则表示取补集
+e.g.  [^a]表示除了a以外的所有字母
+
+$表示字符串结束
+e.g.x$表示以x结束
+
+[]表示 character set，结合-使用表示范围，
+e.g: [1-9]表示1,2,3,4,5….8,9组成的集合
+[cde]表示c,d,e中的一个字符
+
+{}为数量符,匹配前一个字符的数量
+e.g: [0-9]{2}表示2个0-9中的任意字符
+e{3,5}表示至少3个,至多5个e
+
+？为数量符，匹配前一个字符1次或0次 
+e.g.  -?表示搜寻’0个或者1个字符 “-“ 
+
++为数量符,匹配前一个字符至少1次
+e.g.  3[a-z]+4表示3与4之间有至少一个字母
+
+*为数量符,匹配前一个字符0次或多次(包括1次)
+.等价于占位符,匹配(除了换行符外的)单个字符
+|表示逻辑运算符”或”
+
+例题电话号码格式校验_牛客题霸_牛客网
+【鲸析】SQL面试大实话之【正则表达式 REGEXP 实战解析】_哔哩哔哩_bilibili
+
+总结
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data type</title>
+    <url>/2025/06/23/type/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Union</title>
+    <url>/2025/06/05/union/</url>
+    <content><![CDATA[Basic SentenceSELECT column_name(s) FROM table_name1UNIONSELECT column_name(s) FROM table_name2
+
+
+The SELECT statements within a UNION must have the same number of columns. Columns must also have similar data types. Meanwhile, the order of the columns in each SELECT statement must be the same.
+SELECT will automatic deduplication, while SELECT ALL will not.
+
+
+UNIONTables:
+employees:
+
+
+
+emp_id
+name
+dpt_id
+
+
+
+1
+apple
+101
+
+
+2
+boy
+102
+
+
+3
+cat
+101
+
+
+4
+dog
+103
+
+
+former_employees:
+
+
+
+emp_id
+name
+dpt_id
+
+
+
+5
+egg
+102
+
+
+2
+boy
+102
+
+
+SELECT name, dpt_id FROM employeesUNIONSELECT name, dpt_id FROM former_employees;
+
+result:
+
+
+
+name
+dpt_id
+
+
+
+
+apple
+101
+
+
+
+boy
+102
+automatic deduplication
+
+
+cat
+101
+
+
+
+dog
+103
+
+
+
+egg
+102
+
+
+
+
+UNION ALLTables: 
+SELECT name, dpt_id FROM employeesUNION ALLSELECT name, dpt_id FROM former_employees;
+
+result:
+
+
+
+name
+dpt_id
+
+
+
+
+apple
+101
+
+
+
+boy
+102
+first record
+
+
+cat
+101
+
+
+
+dog
+103
+
+
+
+egg
+102
+
+
+
+boy
+102
+from former_employees
+
+
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+</search>
