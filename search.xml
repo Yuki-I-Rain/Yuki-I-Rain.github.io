@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>TRAE meetup @Guangzhou</title>
+    <url>/2025/09/22/TRAE-meetup/</url>
+    <content><![CDATA[开场
+1.40 p.m.到达会场，领取物资，签名，并找位置坐下后，暖场活动就开始了
+
+暖场活动大概持续20分钟，内容是每个人给自己的职业想3个标签（不剧透），然后让一位在台下的观众猜一下，猜对了各奖励一个抱枕
+
+2.00 p.m. 活动正式开始，活动主线为4场讲座+茶歇
+
+
+如何与AI（高潜实习生）协作
+
+协作方法论：  明确任务边界，把模糊的需求转化为清晰的PRD  提供结构化的输入，以及必要的上下文信息  建立质量兜底制度，随时准备好接手补位
+
+
+Context Engineering(上下文工程)高质量的输出，源于高质量的上下文输入
+
+茶歇
+合照
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>TRAE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Distinguish having and where</title>
     <url>/2025/06/16/having-where/</url>
     <content><![CDATA[
@@ -69,168 +98,6 @@ More info: Deployment
       </categories>
       <tags>
         <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Union</title>
-    <url>/2025/06/05/union/</url>
-    <content><![CDATA[Basic SentenceSELECT column_name(s) FROM table_name1UNIONSELECT column_name(s) FROM table_name2
-
-
-The SELECT statements within a UNION must have the same number of columns. Columns must also have similar data types. Meanwhile, the order of the columns in each SELECT statement must be the same.
-SELECT will automatic deduplication, while SELECT ALL will not.
-
-
-UNIONTables:
-employees:
-
-
-
-emp_id
-name
-dpt_id
-
-
-
-1
-apple
-101
-
-
-2
-boy
-102
-
-
-3
-cat
-101
-
-
-4
-dog
-103
-
-
-former_employees:
-
-
-
-emp_id
-name
-dpt_id
-
-
-
-5
-egg
-102
-
-
-2
-boy
-102
-
-
-SELECT name, dpt_id FROM employeesUNIONSELECT name, dpt_id FROM former_employees;
-
-result:
-
-
-
-name
-dpt_id
-
-
-
-
-apple
-101
-
-
-
-boy
-102
-automatic deduplication
-
-
-cat
-101
-
-
-
-dog
-103
-
-
-
-egg
-102
-
-
-
-
-UNION ALLTables: 
-SELECT name, dpt_id FROM employeesUNION ALLSELECT name, dpt_id FROM former_employees;
-
-result:
-
-
-
-name
-dpt_id
-
-
-
-
-apple
-101
-
-
-
-boy
-102
-first record
-
-
-cat
-101
-
-
-
-dog
-103
-
-
-
-egg
-102
-
-
-
-boy
-102
-from former_employees
-
-
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Data type</title>
-    <url>/2025/06/23/type/</url>
-    <content><![CDATA[
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
       </tags>
   </entry>
   <entry>
@@ -423,6 +290,168 @@ e.g.  3[a-z]+4表示3与4之间有至少一个字母
 【鲸析】SQL面试大实话之【正则表达式 REGEXP 实战解析】_哔哩哔哩_bilibili
 
 总结
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data type</title>
+    <url>/2025/06/23/type/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Union</title>
+    <url>/2025/06/05/union/</url>
+    <content><![CDATA[Basic SentenceSELECT column_name(s) FROM table_name1UNIONSELECT column_name(s) FROM table_name2
+
+
+The SELECT statements within a UNION must have the same number of columns. Columns must also have similar data types. Meanwhile, the order of the columns in each SELECT statement must be the same.
+SELECT will automatic deduplication, while SELECT ALL will not.
+
+
+UNIONTables:
+employees:
+
+
+
+emp_id
+name
+dpt_id
+
+
+
+1
+apple
+101
+
+
+2
+boy
+102
+
+
+3
+cat
+101
+
+
+4
+dog
+103
+
+
+former_employees:
+
+
+
+emp_id
+name
+dpt_id
+
+
+
+5
+egg
+102
+
+
+2
+boy
+102
+
+
+SELECT name, dpt_id FROM employeesUNIONSELECT name, dpt_id FROM former_employees;
+
+result:
+
+
+
+name
+dpt_id
+
+
+
+
+apple
+101
+
+
+
+boy
+102
+automatic deduplication
+
+
+cat
+101
+
+
+
+dog
+103
+
+
+
+egg
+102
+
+
+
+
+UNION ALLTables: 
+SELECT name, dpt_id FROM employeesUNION ALLSELECT name, dpt_id FROM former_employees;
+
+result:
+
+
+
+name
+dpt_id
+
+
+
+
+apple
+101
+
+
+
+boy
+102
+first record
+
+
+cat
+101
+
+
+
+dog
+103
+
+
+
+egg
+102
+
+
+
+boy
+102
+from former_employees
+
+
 ]]></content>
       <categories>
         <category>notes</category>
