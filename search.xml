@@ -30,6 +30,194 @@ Context Engineering(上下文工程)高质量的输出，源于高质量的上�
       </tags>
   </entry>
   <entry>
+    <title>Vue常用指令</title>
+    <url>/2025/09/04/directives/</url>
+    <content><![CDATA[v-model基本用法在表单上使用，用于双向绑定
+
+实用修饰符
+lzay修饰符
+  &lt;input v-model.lazy=&quot;textField&quot;/&gt; &lt;p&gt;文本输入框内容:&#123;&#123;textField&#125;&#125;&lt;/p&gt;
+  只有当用户完成输入，即输入框失去焦点后，段落中才会同步到输入框中最终的文本数据。
+
+trim修饰符
+  &lt;input v-model.trim=&quot;textField&quot;/&gt; &lt;p&gt;文本输入框内容:&#123;&#123;textField&#125;&#125;&lt;/p&gt;
+  将绑定的文本数据的首尾空格去掉。
+
+
+
+v-on(@)基本用法
+为html标签绑定事件
+事件类型
+
+
+
+
+
+
+
+
+事件
+意义
+可用的元素
+
+
+click
+单击事件，当组件被单击时触发
+大部分 HTML 元素
+
+
+dblclick
+双击事件，当组件被双击时触发
+大部分 HTML 元素
+
+
+focus
+获取焦点事件，例如输入框开启编辑模式时触发
+input、select、textarea 等
+
+
+blur
+失去焦点事件，例如输入框结束编辑模式时触发
+input、select、textarea 等
+
+
+change
+元素内容改变事件，输入框结束输入后，如果内容有变化，会触发此事件
+input、select、textarea 等
+
+
+select
+元素内容选中事件，输入框中的文本被选中时会触发此事件
+input、select、textarea 等
+
+
+mousedown
+鼠标按键被按下事件
+大部分 HTML 元素
+
+
+mouseup
+鼠标按键抬起事件
+大部分 HTML 元素
+
+
+mousemove
+鼠标在组件内移动事件
+大部分 HTML 元素
+
+
+mouseout
+鼠标移出组件时触发
+大部分 HTML 元素
+
+
+mouseover
+鼠标移入组件时触发
+大部分 HTML 元素
+
+
+Keypdown
+键盘按键被按下
+HTML 中所有表单元素
+
+
+keyup
+键盘按键被抬起
+HTML 中所有表单元素
+
+
+事件修饰符
+capture修饰符
+  可以将监听事件的实际设置为捕获阶段，示例如下：
+  &lt;div @click.capture=&quot;click1&quot; style=&quot;border:solid red&quot;&gt;     外层    &lt;div @click.capture=&quot;click2&quot; style=&quot;border:solid red&quot;&gt;        中层        &lt;div @click.capture=&quot;click3&quot; style=&quot;border:solid red&quot;&gt;            点击        &lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;          
+  点击最内层元素，控制台输出：
+  外层中层内层
+
+stop修饰符
+  stop修饰符可以阻止事件的传递，例如：
+  &lt;div @click.stop=&quot;click1&quot; style=&quot;border:solid red&quot;&gt;     外层    &lt;div @click.stop=&quot;click2&quot; style=&quot;border:solid red&quot;&gt;        中层        &lt;div @click.stop=&quot;click3&quot; style=&quot;border:solid red&quot;&gt;            点击        &lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;
+  点击最内层元素，控制台：
+  内层
+
+其他修饰符
+
+
+
+
+
+
+
+
+事件修饰符
+作 用
+
+
+stop
+阻止事件传递
+
+
+capture
+监听捕获场景的事件
+
+
+once
+只触发一次事件
+
+
+exact
+只有精确满足按键的条件才会触发事件（按键组合）
+
+
+self
+当事件对象的 target 属性是当前组件时才触发事件
+
+
+Prevent
+禁止默认的事件
+
+
+passive
+不禁止默认事件
+
+
+其他鼠标按键修饰符
+
+
+
+left
+鼠标左键（click.left）
+
+
+right
+鼠标右键
+
+
+middle
+鼠标中键
+
+
+
+系统按键修饰符
+  Vue中还提供了一些特殊的系统按键修饰符，这些修饰符是配合其他键盘按键或鼠标按键进行使用的，主要有如下4种：
+  ctrl, shift, alt, meta(windows&#x2F;command)
+  示例：
+  &lt;div @mousedown. ctrl=&quot;mousedown&quot;&gt;鼠标按下&lt;/div&gt;&lt;--! 上面代码的作用是用户按下Ctrl键的同时,再按下鼠标按键才会触发绑定的事件函数。--&gt;
+  &lt;input @keyup.alt.enter=&quot;keyup&quot;&gt;&lt;/input&gt; &lt;--! 上面代码的作用是用户按下Alt键的同时,再按回车键才会触发绑定的事件函数。 --&gt;
+
+
+v-bind(:)基本用法为html标签绑定属性值（在html标签内，不能使用插值表达式）
+
+
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>Vue3</tag>
+        <tag>Frontend</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Distinguish having and where</title>
     <url>/2025/06/16/having-where/</url>
     <content><![CDATA[
@@ -299,15 +487,37 @@ e.g.  3[a-z]+4表示3与4之间有至少一个字母
       </tags>
   </entry>
   <entry>
-    <title>Data type</title>
-    <url>/2025/06/23/type/</url>
-    <content><![CDATA[
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
+    <title>组件中数据与事件的传递</title>
+    <url>/2025/09/29/transmit/</url>
+    <content><![CDATA[Created: 2025年9月29日 17:10Subject: Vue3
+基本用法
+当我们创建好了Vue应用实例后，使用mount方法可以将其绑定到指定的HTML元素上。应用实例可以使用component方法来定义组件，定义好组件后，可以直接在HTML文档中进行使用。
+
+自定义警告提示框：
+
+
+&lt;script&gt;  const App = Vue.createApp(&#123;&#125;)    const alertComponent = &#123;    data() &#123;      return &#123;        msg: &quot;警告框提示&quot;,        count: 0      &#125;    &#125;,    methods: &#123;      click() &#123;        alert(this.msg + this.count++)      &#125;    &#125;,    template: `&lt;div&gt;&lt;button @click=&quot;click&quot;&gt;按钮&lt;/button&gt;&lt;/div&gt;`  &#125;    App.component(&quot;my-alert&quot;, alertComponent)  App.mount(&quot;#Application&quot;)&lt;/script&gt;
+
+需要使用自定义的组件时，只需使用组件名标签即可：
+&lt;div id=&quot;Application&quot;&gt;    &lt;my-alert&gt;&lt;/my-alert&gt;    &lt;my-alert&gt;&lt;/my-alert&gt;&lt;/div&gt;
+
+处理组件事件($emit)
+用emit传递事件
+
+&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc()&#123;                    console.log(&quot;btn clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            template:`&lt;div&gt;&lt;button @click=&quot;$emit(&#x27;myclick&#x27;)&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+
+
+可以同时传递一些参数
+
+&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc(param)&#123;                    console.log(param+&quot; clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            template:`&lt;div&gt;&lt;button @click=&quot;$emit(&#x27;myclick&#x27;,title)&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+
+
+若在传递事件之前，子组件还有一些内部的逻辑需要处理，也可以在子组件中包装一个方法
+
+&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc(param)&#123;                    console.log(param+&quot; clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            methods:&#123;                click1()&#123;                    console.log(&quot;inside&quot;)                    this.$emit(&#x27;myclick&#x27;,this.title)                &#125;            &#125;,            template:`&lt;div&gt;&lt;button @click=&quot;click1&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
       <tags>
-        <tag>SQL</tag>
+        <tag>Vue3</tag>
+        <tag>Frontend</tag>
       </tags>
   </entry>
   <entry>
@@ -452,6 +662,18 @@ boy
 from former_employees
 
 
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data type</title>
+    <url>/2025/06/23/type/</url>
+    <content><![CDATA[
 ]]></content>
       <categories>
         <category>notes</category>
