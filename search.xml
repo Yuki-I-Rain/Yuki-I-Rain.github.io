@@ -1,35 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>TRAE meetup @Guangzhou</title>
-    <url>/2025/09/22/TRAE-meetup/</url>
-    <content><![CDATA[开场
-1.40 p.m.到达会场，领取物资，签名，并找位置坐下后，暖场活动就开始了
-
-暖场活动大概持续20分钟，内容是每个人给自己的职业想3个标签（不剧透），然后让一位在台下的观众猜一下，猜对了各奖励一个抱枕
-
-2.00 p.m. 活动正式开始，活动主线为4场讲座+茶歇
-
-
-如何与AI（高潜实习生）协作
-
-协作方法论：  明确任务边界，把模糊的需求转化为清晰的PRD  提供结构化的输入，以及必要的上下文信息  建立质量兜底制度，随时准备好接手补位
-
-
-Context Engineering(上下文工程)高质量的输出，源于高质量的上下文输入
-
-茶歇
-合照
-]]></content>
-      <categories>
-        <category>life</category>
-      </categories>
-      <tags>
-        <tag>AI</tag>
-        <tag>TRAE</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue常用指令</title>
     <url>/2025/09/04/directives/</url>
     <content><![CDATA[v-model基本用法在表单上使用，用于双向绑定
@@ -218,6 +189,35 @@ v-bind(:)基本用法为html标签绑定属性值（在html标签内，不能使
       </tags>
   </entry>
   <entry>
+    <title>TRAE meetup @Guangzhou</title>
+    <url>/2025/09/22/TRAE-meetup/</url>
+    <content><![CDATA[开场
+1.40 p.m.到达会场，领取物资，签名，并找位置坐下后，暖场活动就开始了
+
+暖场活动大概持续20分钟，内容是每个人给自己的职业想3个标签（不剧透），然后让一位在台下的观众猜一下，猜对了各奖励一个抱枕
+
+2.00 p.m. 活动正式开始，活动主线为4场讲座+茶歇
+
+
+如何与AI（高潜实习生）协作
+
+协作方法论：  明确任务边界，把模糊的需求转化为清晰的PRD  提供结构化的输入，以及必要的上下文信息  建立质量兜底制度，随时准备好接手补位
+
+
+Context Engineering(上下文工程)高质量的输出，源于高质量的上下文输入
+
+茶歇
+合照
+]]></content>
+      <categories>
+        <category>life</category>
+      </categories>
+      <tags>
+        <tag>AI</tag>
+        <tag>TRAE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Distinguish having and where</title>
     <url>/2025/06/16/having-where/</url>
     <content><![CDATA[
@@ -262,30 +262,6 @@ SELECT customer_id, SUM(amount) as total_spentFROM transactionsGROUP BY customer
       </categories>
       <tags>
         <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2025/09/14/hello-world/</url>
-    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
-
-More info: Writing
-Run server$ hexo server
-
-More info: Server
-Generate static files$ hexo generate
-
-More info: Generating
-Deploy to remote sites$ hexo deploy
-
-More info: Deployment
-]]></content>
-      <categories>
-        <category>Instruction</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -433,6 +409,75 @@ Summary
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2025/09/14/hello-world/</url>
+    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server$ hexo server
+
+More info: Server
+Generate static files$ hexo generate
+
+More info: Generating
+Deploy to remote sites$ hexo deploy
+
+More info: Deployment
+]]></content>
+      <categories>
+        <category>Instruction</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data type</title>
+    <url>/2025/06/23/type/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>SQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>组件中数据与事件的传递</title>
+    <url>/2025/09/29/transmit/</url>
+    <content><![CDATA[基本用法
+当我们创建好了Vue应用实例后，使用mount方法可以将其绑定到指定的HTML元素上。应用实例可以使用component方法来定义组件，定义好组件后，可以直接在HTML文档中进行使用。
+
+自定义警告提示框：
+
+
+&lt;script&gt;  const App = Vue.createApp(&#123;&#125;)    const alertComponent = &#123;    data() &#123;      return &#123;        msg: &quot;警告框提示&quot;,        count: 0      &#125;    &#125;,    methods: &#123;      click() &#123;        alert(this.msg + this.count++)      &#125;    &#125;,    template: `&lt;div&gt;&lt;button @click=&quot;click&quot;&gt;按钮&lt;/button&gt;&lt;/div&gt;`  &#125;    App.component(&quot;my-alert&quot;, alertComponent)  App.mount(&quot;#Application&quot;)&lt;/script&gt;
+
+需要使用自定义的组件时，只需使用组件名标签即可：
+&lt;div id=&quot;Application&quot;&gt;    &lt;my-alert&gt;&lt;/my-alert&gt;    &lt;my-alert&gt;&lt;/my-alert&gt;&lt;/div&gt;
+
+处理组件事件($emit)
+用emit传递事件
+
+&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc()&#123;                    console.log(&quot;btn clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            template:`&lt;div&gt;&lt;button @click=&quot;$emit(&#x27;myclick&#x27;)&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+
+
+可以同时传递一些参数
+
+&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc(param)&#123;                    console.log(param+&quot; clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            template:`&lt;div&gt;&lt;button @click=&quot;$emit(&#x27;myclick&#x27;,title)&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+
+
+若在传递事件之前，子组件还有一些内部的逻辑需要处理，也可以在子组件中包装一个方法
+
+&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc(param)&#123;                    console.log(param+&quot; clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            methods:&#123;                click1()&#123;                    console.log(&quot;inside&quot;)                    this.$emit(&#x27;myclick&#x27;,this.title)                &#125;            &#125;,            template:`&lt;div&gt;&lt;button @click=&quot;click1&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <tags>
+        <tag>Vue3</tag>
+        <tag>Frontend</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Regular Expression</title>
     <url>/2025/06/15/regexp/</url>
     <content><![CDATA[一般形式WHERE example_column REGEXP &#x27;这里写正则表达式内容&#x27;
@@ -484,40 +529,6 @@ e.g.  3[a-z]+4表示3与4之间有至少一个字母
       </categories>
       <tags>
         <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>组件中数据与事件的传递</title>
-    <url>/2025/09/29/transmit/</url>
-    <content><![CDATA[Created: 2025年9月29日 17:10Subject: Vue3
-基本用法
-当我们创建好了Vue应用实例后，使用mount方法可以将其绑定到指定的HTML元素上。应用实例可以使用component方法来定义组件，定义好组件后，可以直接在HTML文档中进行使用。
-
-自定义警告提示框：
-
-
-&lt;script&gt;  const App = Vue.createApp(&#123;&#125;)    const alertComponent = &#123;    data() &#123;      return &#123;        msg: &quot;警告框提示&quot;,        count: 0      &#125;    &#125;,    methods: &#123;      click() &#123;        alert(this.msg + this.count++)      &#125;    &#125;,    template: `&lt;div&gt;&lt;button @click=&quot;click&quot;&gt;按钮&lt;/button&gt;&lt;/div&gt;`  &#125;    App.component(&quot;my-alert&quot;, alertComponent)  App.mount(&quot;#Application&quot;)&lt;/script&gt;
-
-需要使用自定义的组件时，只需使用组件名标签即可：
-&lt;div id=&quot;Application&quot;&gt;    &lt;my-alert&gt;&lt;/my-alert&gt;    &lt;my-alert&gt;&lt;/my-alert&gt;&lt;/div&gt;
-
-处理组件事件($emit)
-用emit传递事件
-
-&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc()&#123;                    console.log(&quot;btn clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            template:`&lt;div&gt;&lt;button @click=&quot;$emit(&#x27;myclick&#x27;)&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-
-
-可以同时传递一些参数
-
-&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc(param)&#123;                    console.log(param+&quot; clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            template:`&lt;div&gt;&lt;button @click=&quot;$emit(&#x27;myclick&#x27;,title)&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
-
-
-若在传递事件之前，子组件还有一些内部的逻辑需要处理，也可以在子组件中包装一个方法
-
-&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Vue组件&lt;/title&gt;    &lt;script src=&quot;https://unpkg.com/vue@3/dist/vue.global.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;Application&quot;&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn1&quot;&gt;&lt;/my-alert&gt;        &lt;my-alert @myclick=&quot;appfunc&quot; title=&quot;btn2&quot;&gt;&lt;/my-alert&gt;    &lt;/div&gt;    &lt;script&gt;        const App = Vue.createApp(&#123;            methods:&#123;                appfunc(param)&#123;                    console.log(param+&quot; clicked&quot;)                &#125;            &#125;        &#125;)        const alertComponent = &#123;            props:[&quot;title&quot;],            methods:&#123;                click1()&#123;                    console.log(&quot;inside&quot;)                    this.$emit(&#x27;myclick&#x27;,this.title)                &#125;            &#125;,            template:`&lt;div&gt;&lt;button @click=&quot;click1&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/button&gt;&lt;/div&gt;`        &#125;        App.component(&quot;my-alert&quot;,alertComponent)        App.mount(&quot;#Application&quot;)    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
-      <tags>
-        <tag>Vue3</tag>
-        <tag>Frontend</tag>
       </tags>
   </entry>
   <entry>
@@ -662,18 +673,6 @@ boy
 from former_employees
 
 
-]]></content>
-      <categories>
-        <category>notes</category>
-      </categories>
-      <tags>
-        <tag>SQL</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Data type</title>
-    <url>/2025/06/23/type/</url>
-    <content><![CDATA[
 ]]></content>
       <categories>
         <category>notes</category>
